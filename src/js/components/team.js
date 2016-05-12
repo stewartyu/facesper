@@ -16,8 +16,9 @@ export const init = () => {
     return response.json();
   }).then((json) => {
     members = _.filter(json.members, (member) => {
-      return (`profile` in member) && !member.deleted && !member.is_bot && !hasDefaultProfilePhoto(member);
+      return member.real_name !== `slackbot` && (`profile` in member) && !member.deleted && !member.is_bot && !hasDefaultProfilePhoto(member);
     });
+    console.log(members);
   });
 };
 
