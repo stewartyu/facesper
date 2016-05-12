@@ -10,8 +10,8 @@ const renderQuestion = () => {
 };
 
 const attachListener = () => {
-  document.addEventListener('facesper:grade', (e) => {
-    console.log('facesper:grade', e.detail.grade);
+  document.addEventListener(`facesper:grade`, (e) => {
+    console.log(`facesper:grade`, e.detail.grade);
 
     renderQuestion();
   });

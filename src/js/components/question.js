@@ -14,14 +14,14 @@ export const question = (person1, person2) => {
   }
 
   const dispatchAnswer = (grade) => {
-    const event = new CustomEvent('facesper:grade', {
+    const event = new CustomEvent(`facesper:grade`, {
       detail: {
-        grade
-      }
+        grade,
+      },
     });
 
     document.dispatchEvent(event);
-  }
+  };
 
   const gradeAnswer = (e) => {
     e.preventDefault();
