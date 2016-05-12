@@ -2,5 +2,6 @@
 
 {% block content %}
   <h1>{{ title }}</h1>
+  <div id="score">0</div>
   <div id="facesper"></div>
 {% endblock %}
