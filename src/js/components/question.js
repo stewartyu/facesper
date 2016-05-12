@@ -23,10 +23,8 @@ export const question = (person1, person2) => {
     document.dispatchEvent(event);
   };
 
-  const gradeAnswer = (e) => {
-    e.preventDefault();
-
-    const buttonValue = e.target.attributes[`data-response`].value === `true`;
+  const gradeAnswer = (value) => {
+    const buttonValue = value === `true`;
     const grade = buttonValue === answer;
 
     dispatchAnswer(grade);
@@ -38,7 +36,11 @@ export const question = (person1, person2) => {
     const buttons = document.querySelectorAll(`.js-question__button`);
 
     for (let i = 0; i < buttons.length; i++) {
-      buttons[i].addEventListener(`click`, gradeAnswer);
+      buttons[i].addEventListener(`click`, (e) => {
+        e.preventDefault();
+
+        gradeAnswer(e.target.attributes[`data-response`].value);
+      });
     }
   };
 
