@@ -18,7 +18,6 @@ export const init = () => {
     members = _.filter(json.members, (member) => {
       return member.real_name !== `slackbot` && (`profile` in member) && !member.deleted && !member.is_bot && !hasDefaultProfilePhoto(member);
     });
-    console.log(members);
   });
 };
 
