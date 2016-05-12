@@ -16,7 +16,7 @@ export const init = () => {
     return response.json();
   }).then((json) => {
     members = _.filter(json.members, (member) => {
-      return !member.deleted && !member.is_bot && !hasDefaultProfilePhoto(member);
+      return ('profile' in member) && !member.deleted && !member.is_bot && !hasDefaultProfilePhoto(member);
     });
   });
 };
