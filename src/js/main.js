@@ -8,7 +8,7 @@ const updateScore = (grade) => {
     score++;
   }
 
-  document.querySelector('#score').innerHTML = score;
+  document.querySelector(`#score`).innerHTML = score;
 };
 
 const renderQuestion = () => {
