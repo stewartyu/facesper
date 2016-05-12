@@ -1,10 +1,14 @@
 import team from './components/team';
 import question from './components/question';
 
-team.list().then((members) => {
-  const person1 = team.random(members);
-  const person2 = team.random(members);
+const renderQuestion = () => {
+  const person1 = team.random();
+  const person2 = team.random();
 
   const currentQuestion = question(person1, person2);
   currentQuestion.render();
+};
+
+team.init().then(() => {
+  renderQuestion();
 });
