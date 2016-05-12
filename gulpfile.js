@@ -6,7 +6,10 @@ var gulp = require('gulp'),
   babel = require('gulp-babel'),
   browserify = require('browserify'),
   source = require('vinyl-source-stream'),
-  babelify = require('babelify');
+  babelify = require('babelify'),
+  dotenv = require('dotenv');
+
+var env = dotenv.config();
 
 gulp.task('sass', function () {
   gulp.src('./src/scss/*.scss')
