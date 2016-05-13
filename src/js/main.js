@@ -1,24 +1,20 @@
 import team from './components/team';
 import question from './components/question';
+import score from './components/score';
 
-let score = 0;
 let timer = 30;
 
-const updateScore = (grade) => {
-  if (grade) {
-    score++;
-    timer = timer + 2;
-  }
-
-  document.querySelector(`#score`).innerHTML = score;
-};
-
 const endGame = () => {
+  const finalScore = score.get();
   const template = `
-    <p>Awesome! You got ${score} points!</p>
+    <p>Awesome! You got ${finalScore} points!</p>
   `;
 
   document.querySelector(`#facesper`).innerHTML = template;
+};
+
+const addBonusTime = () => {
+  timer = timer + 2;
 };
 
 const updateTimer = () => {
@@ -62,8 +58,12 @@ const renderGrade = ({ grade, answer }) => {
 
 const attachListener = () => {
   document.addEventListener(`facesper:grade`, (e) => {
-    updateScore(e.detail.grade);
+    score.update(e.detail.grade);
     renderGrade(e.detail);
+
+    if (e.detail.grade) {
+      addBonusTime();
+    }
 
     setTimeout(() => {
       renderQuestion();
