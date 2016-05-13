@@ -12,9 +12,9 @@
 
 ### Create a Slack token
 
-    Go to [https://api.slack.com/docs/oauth-test-tokens](https://api.slack.com/docs/oauth-test-tokens) to generate an OAuth token
+Go to [https://api.slack.com/docs/oauth-test-tokens](https://api.slack.com/docs/oauth-test-tokens) to generate an OAuth token
 
-    Create a `.env` file with:
+Create a `.env` file with:
 
     SLACK_TOKEN=your-oauth-token
 
