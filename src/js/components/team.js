@@ -26,7 +26,7 @@ export const random = () => {
 
   return {
     name: random.profile.real_name_normalized,
-    image: random.profile.image_original || random.profile.image_512,
+    image: random.profile.image_512 || random.profile.image_192 || random.profile.image_original,
   };
 };
 
