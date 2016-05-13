@@ -3,20 +3,21 @@ import _ from 'lodash';
 export const question = (person1, person2) => {
   const name = person1.name;
   let image = person1.image;
-  let answer = true;
+  let answer = person1.name;
 
   const random = _.random(0, 1);
 
   // if 0, the answer will be false and we show the wrong picture
   if (random === 0) {
     image = person2.image;
-    answer = false;
+    answer = person2.name;
   }
 
-  const dispatchAnswer = (grade) => {
+  const dispatchAnswer = (grade, answer) => {
     const event = new CustomEvent(`facesper:grade`, {
       detail: {
         grade,
+        answer,
       },
     });
 
@@ -25,9 +26,9 @@ export const question = (person1, person2) => {
 
   const gradeAnswer = (value) => {
     const buttonValue = value === `true`;
-    const grade = buttonValue === answer;
+    const grade = buttonValue === (name === answer);
 
-    dispatchAnswer(grade);
+    dispatchAnswer(grade, answer);
 
     return grade;
   };

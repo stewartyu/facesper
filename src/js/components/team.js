@@ -16,13 +16,13 @@ export const init = () => {
     return response.json();
   }).then((json) => {
     members = _.filter(json.members, (member) => {
-      return member.real_name !== `slackbot` && (`profile` in member) && !member.deleted && !member.is_bot && !hasDefaultProfilePhoto(member);
+      return member.real_name !== `slackbot` && !member.deleted && !member.is_bot && !hasDefaultProfilePhoto(member);
     });
   });
 };
 
 export const random = () => {
-  const random = members[_.random(0, members.length)];
+  const random = members[_.random(0, members.length - 1)];
 
   return {
     name: random.profile.real_name_normalized,
