@@ -2,6 +2,7 @@
 
 {% block content %}
   <h1>{{ title }}</h1>
+  <div id="timer"></div>
   <div id="score">0</div>
   <div id="facesper"></div>
   <div id="grade"></div>

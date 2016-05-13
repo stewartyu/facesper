@@ -2,13 +2,36 @@ import team from './components/team';
 import question from './components/question';
 
 let score = 0;
+let timer = 30;
 
 const updateScore = (grade) => {
   if (grade) {
     score++;
+    timer = timer + 2;
   }
 
   document.querySelector(`#score`).innerHTML = score;
+};
+
+const endGame = () => {
+  const template = `
+    <p>Awesome! You got ${score} points!</p>
+  `;
+
+  document.querySelector(`#facesper`).innerHTML = template;
+};
+
+const updateTimer = () => {
+  document.querySelector(`#timer`).innerHTML = timer;
+
+  if (timer > 0) {
+    setTimeout(() => {
+      timer--;
+      updateTimer();
+    }, 1000);
+  } else {
+    endGame();
+  }
 };
 
 const renderQuestion = () => {
@@ -50,5 +73,6 @@ const attachListener = () => {
 
 team.init().then(() => {
   renderQuestion();
+  updateTimer();
   attachListener();
 });
