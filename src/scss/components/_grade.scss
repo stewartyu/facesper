@@ -20,7 +20,7 @@
   &.grade--success {
     display: flex;
 
-    background: hsla(95, 100%, 65%, 1);
+    background: $green;
 
     animation: fade 1s linear;
   }
@@ -28,7 +28,7 @@
   &.grade--fail {
     display: flex;
 
-    background: hsla(0, 100%, 65%, 1);
+    background: $red;
 
     animation: fade 2s linear;
   }
