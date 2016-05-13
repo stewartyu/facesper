@@ -51,8 +51,8 @@ export const question = (person1, person2) => {
         <p class="question__header">Is this <span class="question__name">${name}</span>?</p>
         <img src="${image}" class="question__image" />
         <div class="question__button-container">
-          <button class="question__button js-question__button" data-response="true">Yes</button>
           <button class="question__button js-question__button" data-response="false">No</button>
+          <button class="question__button js-question__button" data-response="true">Yes</button>
         </div>
       </div>
     `;
