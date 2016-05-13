@@ -6,10 +6,10 @@ var gulp = require('gulp'),
   babel = require('gulp-babel'),
   browserify = require('browserify'),
   source = require('vinyl-source-stream'),
-  babelify = require('babelify'),
-  dotenv = require('dotenv');
+  babelify = require('babelify');
 
 if (process.env.NODE_ENV !== 'production') {
+  var dotenv = require('dotenv');
   var env = dotenv.config();
 }
 
