@@ -9,15 +9,10 @@
   margin-bottom: $margin;
 }
 
+.question__image {
+  margin: 0 auto;
+}
+
 .question__name {
   font-weight: bold;
-}
-
-.question__button-container {
-  margin-top: $margin;
-}
-
-.question__button {
-  width: 45%;
-  height: 50px;
 }

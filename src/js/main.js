@@ -8,6 +8,7 @@ const endGame = () => {
   const finalScore = score.get();
   const template = `
     <p>You got ${finalScore} points!</p>
+    <p><button onclick="window.location.reload();">Play Again</button></p>
   `;
 
   document.querySelector(`#facesper`).innerHTML = template;

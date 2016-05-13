@@ -39,4 +39,14 @@ button {
 
   color: $white;
   font-size: $standard-font-size;
+  text-transform: uppercase;
+
+  min-height: 50px;
+  width: 45%;
+
+  margin-top: $margin;
+}
+
+a {
+  text-decoration: none;
 }
