@@ -9,7 +9,9 @@ var gulp = require('gulp'),
   babelify = require('babelify'),
   dotenv = require('dotenv');
 
-var env = dotenv.config();
+if (process.env.NODE_ENV !== 'production') {
+  var env = dotenv.config();
+}
 
 gulp.task('sass', function () {
   gulp.src('./src/scss/*.scss')
