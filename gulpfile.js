@@ -51,8 +51,12 @@ gulp.task('develop', function () {
 
 gulp.task('default', [
   'sass',
+  'babel',
   'develop',
   'watch'
 ]);
 
-gulp.task('heroku:production', ['default']);
+gulp.task('heroku:production', [
+  'sass',
+  'babel'
+]);
