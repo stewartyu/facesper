@@ -8,11 +8,6 @@ var gulp = require('gulp'),
   source = require('vinyl-source-stream'),
   babelify = require('babelify');
 
-if (process.env.NODE_ENV !== 'production') {
-  var dotenv = require('dotenv');
-  var env = dotenv.config();
-}
-
 gulp.task('sass', function () {
   gulp.src('./src/scss/*.scss')
     .pipe(plumber())
