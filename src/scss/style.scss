@@ -1,2 +1,12 @@
-@import 'question';
-@import 'grade';
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "base";
+@import "layout";
+
+// layout
+@import 'layout/header';
+
+// components
+@import 'components/question';
+@import 'components/grade';

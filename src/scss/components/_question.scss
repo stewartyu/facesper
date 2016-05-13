@@ -1,0 +1,23 @@
+.question__image {
+  display: block;
+  max-width: 400px;
+  max-height: 400px;
+  width: 100%;
+}
+
+.question__header {
+  margin-bottom: $margin;
+}
+
+.question__name {
+  font-weight: bold;
+}
+
+.question__button-container {
+  margin-top: $margin;
+}
+
+.question__button {
+  width: 45%;
+  height: 50px;
+}

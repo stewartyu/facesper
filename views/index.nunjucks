@@ -1,8 +1,11 @@
 {% extends 'layout.nunjucks' %}
 
 {% block content %}
-  <h1>{{ title }}</h1>
-  <div id="timer"></div>
+  <div id="header">
+    <h1 class="header__title">{{ title }}</h1>
+    <div class="header__timer" id="timer">30</div>
+  </div>
+
   <div id="facesper"></div>
   <div id="grade"></div>
 {% endblock %}

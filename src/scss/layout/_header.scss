@@ -1,0 +1,22 @@
+#header {
+  display: flex;
+
+  align-items: center;
+}
+
+.header__title {
+  width: 70%;
+}
+
+.header__timer {
+  width: 30%;
+
+  font-weight: bold;
+  text-align: center;
+
+  &::before {
+    content: 'Time: ';
+
+    font-weight: normal;
+  }
+}

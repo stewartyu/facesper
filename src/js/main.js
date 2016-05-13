@@ -7,7 +7,7 @@ let timer = 30;
 const endGame = () => {
   const finalScore = score.get();
   const template = `
-    <p>Awesome! You got ${finalScore} points!</p>
+    <p>You got ${finalScore} points!</p>
   `;
 
   document.querySelector(`#facesper`).innerHTML = template;
