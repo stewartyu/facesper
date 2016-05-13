@@ -1,0 +1,39 @@
+@keyframes fade {
+  0%, 100% { opacity: 0; }
+  5%, 70% { opacity: 1; }
+}
+
+.grade {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: none;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 1;
+  opacity: 0;
+
+  &.grade--success {
+    display: flex;
+
+    background: hsla(95, 100%, 65%, 1);
+
+    animation: fade 1s linear;
+  }
+
+  &.grade--fail {
+    display: flex;
+
+    background: hsla(0, 100%, 65%, 1);
+
+    animation: fade 2s linear;
+  }
+}
+
+.grade__message {
+  margin: 0 auto;
+}

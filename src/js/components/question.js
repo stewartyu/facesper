@@ -50,8 +50,10 @@ export const question = (person1, person2) => {
       <div class="question">
         <p class="question__header">Is this <span class="question__name">${name}</span>?</p>
         <img src="${image}" class="question__image" />
-        <button class="question__button js-question__button" data-response="true">Yes</button>
-        <button class="question__button js-question__button" data-response="false">No</button>
+        <div class="question__button-container">
+          <button class="question__button js-question__button" data-response="true">Yes</button>
+          <button class="question__button js-question__button" data-response="false">No</button>
+        </div>
       </div>
     `;
 

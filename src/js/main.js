@@ -21,21 +21,30 @@ const renderQuestion = () => {
 
 const renderGrade = ({ grade, answer }) => {
   const gradeClass = grade ? `grade--success` : `grade--fail`;
-  const gradeMessage = grade ? `You got it!` : `Sorry! That was <span class="grade__name">${answer}</span>.`;
+  const gradeMessage = grade ? `You're right!` : `Sorry! That was <span class="grade__name">${answer}</span>.`;
+  const duration = grade ? 1000 : 2000;
+  const gradeEl = document.querySelector(`#grade`);
   const template = `
     <div class="grade ${gradeClass}">
       <p class="grade__message">${gradeMessage}</p>
     </div>
   `;
 
-  document.querySelector(`#grade`).innerHTML = template;
+  gradeEl.innerHTML = template;
+
+  setTimeout(() => {
+    gradeEl.innerHTML = ``;
+  }, duration);
 };
 
 const attachListener = () => {
   document.addEventListener(`facesper:grade`, (e) => {
     updateScore(e.detail.grade);
     renderGrade(e.detail);
-    renderQuestion();
+
+    setTimeout(() => {
+      renderQuestion();
+    }, 100);
   });
 };
 
