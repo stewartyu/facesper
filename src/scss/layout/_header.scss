@@ -7,7 +7,9 @@
 .header__title {
   width: 70%;
 
-  color: $blue;
+  a, a:active, a:visited, a:hover {
+    color: $blue;
+  }
 }
 
 .header__timer {
