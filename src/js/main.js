@@ -2,16 +2,19 @@ import team from './components/team';
 import question from './components/question';
 import score from './components/score';
 
-let timer = 30;
+let timer = 5;
 
 const endGame = () => {
   const finalScore = score.get();
   const template = `
     <p>You got ${finalScore} points!</p>
+    <div id="leaderboard"></div>
     <p><button onclick="window.location.reload();">Play Again</button></p>
   `;
 
   document.querySelector(`#facesper`).innerHTML = template;
+  
+  score.renderLeaderboard();
 };
 
 const addBonusTime = () => {
