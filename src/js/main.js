@@ -4,16 +4,28 @@ import score from './components/score';
 
 let timer = 5;
 
+const saveScore = () => {
+  const name = prompt(`What's your name?`);
+
+  score.save({name});
+  
+  const saveButton = document.querySelector(`.save`);
+  saveButton.parentNode.removeChild(saveButton);
+};
+
 const endGame = () => {
   const finalScore = score.get();
   const template = `
     <p>You got ${finalScore} points!</p>
+    <button class="save">Save Score</button>
     <div id="leaderboard"></div>
     <p><button onclick="window.location.reload();">Play Again</button></p>
   `;
 
   document.querySelector(`#facesper`).innerHTML = template;
-  
+
+  document.querySelector(`.save`).addEventListener(`click`, saveScore);
+
   score.renderLeaderboard();
 };
 

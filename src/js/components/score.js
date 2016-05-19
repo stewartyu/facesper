@@ -29,7 +29,7 @@ const renderLeaderboard = () => {
   });
 };
 
-const saveScore = ({ name, score }) => {
+const save = ({ name }) => {
   const userRef = leaderboardRef.child(name);
 
   userRef.setWithPriority({ name, score }, score);
@@ -48,6 +48,6 @@ const get = () => {
 export default {
   update,
   get,
-  saveScore,
+  save,
   renderLeaderboard,
 };
