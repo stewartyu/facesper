@@ -15,9 +15,9 @@ const renderLeaderboard = () => {
 
     const template = _.template(`
       <table>
-        <% _.forEach(scores, function(score) { %>
+        <% _.forEach(scores, function(score, index) { %>
         <tr>
-          <td><%- score.name %></td>
+          <td>#<%- index + 1 %>: <%- score.name %></td>
           <td><%- score.score %></td>
         </tr>
         <% }); %>

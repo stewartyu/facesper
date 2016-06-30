@@ -15,12 +15,12 @@
 .header__timer {
   width: 30%;
 
-  font-weight: bold;
+  font-family: $calibre-medium;
   text-align: center;
 
   &::before {
     content: 'Time: ';
 
-    font-weight: normal;
+    font-family: $calibre-light;
   }
 }

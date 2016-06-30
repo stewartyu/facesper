@@ -3,7 +3,8 @@
 }
 
 html {
-  font-family: $default-font-family;
+  font-family: $calibre-light;
+  letter-spacing: 0.04rem;
 }
 
 body {
@@ -15,21 +16,10 @@ body {
 h1 {
   padding: $margin 0;
 
+  font-family: $verlag;
   font-size: $xlarge-font-size;
-}
-
-h2 {
-  padding: $margin 0;
-
-  font-size: $xlarge-font-size;
-}
-
-h3 {
-  font-size: $large-font-size;
-}
-
-h4 {
-  font-weight: bold;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
 }
 
 button {
@@ -39,13 +29,21 @@ button {
   border-radius: 5px;
 
   color: $white;
+  font-family: $verlag;
   font-size: $standard-font-size;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
   text-transform: uppercase;
 
   min-height: 50px;
-  width: 45%;
+
+  padding: 0 3rem;
 
   margin-top: $margin;
+
+  &.question__button {
+    width: 45%;
+  }
 }
 
 a {

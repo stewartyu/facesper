@@ -18,7 +18,7 @@ const endGame = () => {
   const template = `
     <p>You got ${finalScore} points!</p>
     <button class="save">Save Score</button>
-    <div id="leaderboard"></div>
+    <div id="leaderboard" class="leaderboard"></div>
     <p><button onclick="window.location.reload();">Play Again</button></p>
   `;
 
