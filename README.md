@@ -23,3 +23,7 @@ Create a `.env` file with:
     gulp
 
 Now go to [http://localhost:3000](http://localhost:3000)!
+
+## Deploying
+
+    git push heroku master
