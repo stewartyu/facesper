@@ -25,7 +25,7 @@ export const random = () => {
   const random = members[_.random(0, members.length - 1)];
 
   return {
-    name: random.profile.real_name_normalized,
+    name: random.profile.real_name,
     image: random.profile.image_512 || random.profile.image_192 || random.profile.image_original,
   };
 };
